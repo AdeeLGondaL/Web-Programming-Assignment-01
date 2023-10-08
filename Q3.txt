@@ -1,0 +1,130 @@
+KASB KTrade is a stock trading platform that allows users to buy and sell shares of companies listed on the Pakistan Stock Exchange (PSX). It offers features such as virtual trading, real trading, shariah stocks trading, trader's assistance, research portal, and research reports. It also provides low commission rates, free account opening, and access to various markets such as oil and gold. KASB KTrade is available on web and mobile devices¹².
+
+Investify is a robo-advisor that helps users to invest their money in diversified portfolios of exchange-traded funds (ETFs) based on their risk profile, goals, and preferences. It offers features such as automated rebalancing, tax-loss harvesting, fractional shares, dividend reinvestment, and personalized advice. It also provides low fees, no minimum balance, and access to various asset classes such as stocks, bonds, commodities, and cryptocurrencies. Investify is available on web and mobile devices⁶.
+
+System Design
+
+Both applications have similar high-level system design components, such as:
+
+- A front-end layer that handles the user interface and user interactions. This layer can be implemented using web technologies such as HTML, CSS, JavaScript, React, Angular, etc. or native mobile technologies such as Swift, Kotlin, Flutter, etc.
+- A back-end layer that handles the business logic and data processing. This layer can be implemented using server-side technologies such as Java, Python, Node.js, Ruby on Rails, etc.
+- A database layer that stores and retrieves the data for the application. This layer can be implemented using relational databases such as MySQL, PostgreSQL, Oracle, etc. or non-relational databases such as MongoDB, Cassandra, Redis, etc.
+- A cache layer that improves the performance and scalability of the application by storing frequently accessed data in memory. This layer can be implemented using caching technologies such as Memcached, Redis, etc.
+- A load balancer that distributes the incoming requests to the back-end servers. This layer can be implemented using load balancing technologies such as Nginx, HAProxy, etc.
+- A message broker that enables asynchronous communication between different components of the application. This layer can be implemented using message broker technologies such as Kafka, RabbitMQ, etc.
+
+However, there are also some differences in the system design of the two applications based on their specific requirements and features.
+
+For example:
+
+- KASB KTrade needs to handle real-time data streaming from the PSX and other sources to provide up-to-date information on stock prices, market trends, news updates, etc. to the users. This requires a high-performance and low-latency system design that can process large volumes of data in near real-time. To achieve this, KASB KTrade can use technologies such as WebSocket, Apache Spark, Apache Storm, etc.
+- Investify needs to handle complex computations and algorithms to generate optimal portfolios for the users based on their risk profile, goals,
+and preferences. This requires a high-accuracy and low-error system design that can perform sophisticated mathematical operations and optimizations. To achieve this,
+Investify can use technologies such as TensorFlow, Scipy, PyTorch, etc.
+
+API Architecture
+
+Both applications use RESTful APIs to communicate between the front-end and the back-end layers. RESTful APIs are based on the principles of Representational State Transfer (REST), which is a software architectural style that defines a set of constraints for creating web services. RESTful APIs use HTTP methods (such as GET,
+POST,
+PUT,
+DELETE,
+etc.) to perform operations on resources (such as users,
+stocks,
+portfolios,
+etc.) identified by Uniform Resource Identifiers (URIs). RESTful APIs also use JSON (JavaScript Object Notation) as the data format for exchanging information between the client and the server.
+
+For example:
+
+- To get the details of a user with id 123 in KASB KTrade,
+the front-end can send a GET request to https://kasb.com/api/users/123 and receive a JSON response with the user's name,
+email,
+balance,
+etc.
+- To create a new portfolio with name "My Portfolio" in Investify,
+the front-end can send a POST request to https://investify.com/api/portfolios with a JSON body containing the portfolio's name,
+risk level,
+goal,
+etc. and receive a JSON response with the portfolio's id,
+name,
+allocation,
+etc.
+
+Scalability
+
+Both applications need to scale well to handle increasing user traffic and data volume without compromising performance or availability. Scalability can be achieved by using horizontal scaling or vertical scaling techniques.
+
+Horizontal scaling means adding more servers or nodes to the system to increase its capacity and throughput. Horizontal scaling is also known as scaling out. Horizontal scaling can be done by using techniques such as:
+
+- Sharding: splitting the data into smaller and independent partitions that can be stored and processed by different servers or nodes. For example,
+KASB KTrade can shard its database by stock symbols or user ids to distribute the load across multiple servers or nodes.
+- Replication: creating copies of the data or servers or nodes that can serve the same requests or perform the same tasks. For example,
+Investify can replicate its database or back-end servers or nodes to increase its availability and fault tolerance.
+
+Vertical scaling means increasing the resources or capabilities of a single server or node to increase its capacity and throughput. Vertical scaling is also known as scaling up. Vertical scaling can be done by using techniques such as:
+
+- Upgrading: adding more CPU,
+RAM,
+disk space,
+bandwidth,
+etc. to a single server or node to improve its performance and efficiency. For example,
+KASB KTrade can upgrade its back-end servers or nodes to handle more concurrent requests or computations.
+- Optimizing: improving the code,
+algorithm,
+configuration,
+etc. of a single server or node to reduce its resource consumption and latency. For example,
+Investify can optimize its back-end code or algorithm to reduce its computation time and error rate.
+
+Software Architecture
+
+Both applications use a microservices architecture to organize their software components into small and independent services that communicate with each other through APIs. Microservices architecture is a software architectural style that promotes modularity, scalability, flexibility, and maintainability of the system. Microservices architecture also enables continuous delivery and deployment of the system by allowing each service to be developed, tested, and deployed independently.
+
+For example:
+
+- KASB KTrade can have microservices such as:
+    - User Service: responsible for managing user accounts, authentication, authorization, etc.
+    - Stock Service: responsible for fetching, storing, and updating stock data from PSX and other sources.
+    - Trade Service: responsible for executing, validating, and recording trade orders from users.
+    - Research Service: responsible for providing research reports, analysis, and recommendations on stocks and markets.
+    - Notification Service: responsible for sending alerts, updates, and notifications to users via email, SMS, push notifications, etc.
+- Investify can have microservices such as:
+    - User Service: responsible for managing user accounts, authentication, authorization, etc.
+    - Portfolio Service: responsible for creating, updating, and deleting portfolios for users based on their risk profile, goals, and preferences.
+    - Investment Service: responsible for buying, selling, and rebalancing ETFs for users based on their portfolios.
+    - Advice Service: responsible for providing personalized advice, tips, and insights to users based on their portfolios and performance.
+    - Notification Service: responsible for sending alerts, updates, and notifications to users via email, SMS, push notifications, etc.
+
+Strengths and Weaknesses
+
+Both applications have some strengths and weaknesses in their software system designs based on their requirements and features.
+
+Some of the strengths are:
+
+- Both applications use RESTful APIs to provide a simple, uniform, and stateless interface for communication between the front-end and the back-end layers. This makes the system easy to use, understand, and integrate with other systems.
+- Both applications use microservices architecture to decompose their software components into small and independent services that communicate with each other through APIs. This makes the system modular, scalable, flexible, and maintainable.
+- Both applications use horizontal scaling techniques such as sharding and replication to increase their capacity and throughput by adding more servers or nodes to the system. This makes the system resilient, reliable, and fault-tolerant.
+
+Some of the weaknesses are:
+
+- Both applications use JSON as the data format for exchanging information between the client and the server. JSON is a human-readable and lightweight data format that is easy to parse and generate. However,
+JSON also has some drawbacks such as:
+    - JSON does not support binary data,
+which means it cannot efficiently store or transmit images,
+videos,
+audio,
+etc. This can limit the functionality or performance of the system.
+    - JSON does not support complex data types such as dates,
+times,
+enums,
+etc. This can cause ambiguity or inconsistency in the representation or interpretation of the data.
+    - JSON does not support schema validation,
+which means it cannot enforce the structure or format of the data. This can cause errors or bugs in the system if the data is malformed or invalid.
+- Both applications use vertical scaling techniques such as upgrading and optimizing to increase their capacity and throughput by increasing the resources or capabilities of a single server or node. However,
+vertical scaling also has some limitations such as:
+    - Vertical scaling is expensive,
+as it requires buying more expensive hardware or software to improve the performance or efficiency of a single server or node.
+    - Vertical scaling is limited,
+as there is a physical or logical limit to how much a single server or node can be improved in terms of CPU,
+RAM,
+disk space,
+bandwidth,
+etc.
